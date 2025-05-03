@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mine reiser</title>
+    <link rel="stylesheet" href="hr.css">
+
+
+</head>
+<body>
+<header>
+<div class="menywrapper">
+  <!-- Skjult checkbox -->
+  <input type="checkbox" id="meny-toggle" hidden>
+
+  <!-- Label fungerer som knapp -->
+  <label for="meny-toggle" class="profilmeny">
+    <span class="meny-ikon">&#9776;</span>
+    <img src="profilbilde.jpg" alt="Profil" class="profilbilde">
+  </label>
+
+  <!-- Menyvalg -->
+  <div class="meny-valg">
+    <a href="hrprofil.html" class="kontoknapp">Profil</a>
+    <a href="hrmelding.html" class="meldingknapp">Meldinger</a>
+    <a href="hrpost.html" class="postknapp">Lei ut hjemmet ditt</a>
+    <button type="button" class="loggknapp">Logg ut</button>
+  </div>
+</div>
+
+  <div class="logo">
+    <a href="hrforside.html">
+      <img src="hrlogo.jpg" alt="logo" class="logo">
+    </a>
+  </div>
+
+<a href="hrfavoritter.html" class="favoritt-hjerte" title="Favoritter">
+  <span>&#10084;</span>
+</a>
+<label for="popup" class="open-popup">Logg inn</label>
+
+<!-- Skjulte radio-knapper for tab-switching -->
+<input type="radio" name="auth-tab" id="login-tab" checked hidden>
+<input type="radio" name="auth-tab" id="register-tab" hidden>
+
+<!-- Pop-up bakgrunn -->
+<input type="checkbox" id="popup" class="popup-checkbox">
+<div class="popup">
+  <div class="popup-content">
+    <label for="popup" class="close-popup">&times;</label>
+
+    <!-- Topp-knapper -->
+    <div class="tab-buttons">
+      <label for="login-tab" class="tab-button">Logg inn</label>
+      <label for="register-tab" class="tab-button">Registrer deg</label>
+    </div>
+
+    <!-- Innhold for Logg inn -->
+    <div class="tab-content login-content">
+      <input type="email" placeholder="E-post" required>
+      <input type="password" placeholder="Passord" required>
+      <button>Logg inn</button>
+    </div>
+
+    <!-- Innhold for Registrer deg -->
+    <div class="tab-content register-content">
+      <input type="text" placeholder="Fornavn" required>
+	  <input type="text" placeholder="Etternavn" required>
+      <input type="email" placeholder="E-post" required>
+	  <input type="tel" placeholder="Telefonnummer" required>
+      <input type="password" placeholder="Passord" required>
+	  <form>
+      <input type="checkbox" id="terms" name="terms" required>
+      <label for="terms">Jeg godkjenner vilkårene for medlemskap</label>
+      </form>
+      <button>Registrer deg</button>
+    </div>
+  </div>
+</div>
+</header>
+  <div class="profil-container">
+    <aside class="profil-sidepanel">
+      <a href="hrprofil.html" class="sidepanel-link">Profil</a>
+      <a href="hrminereiser.html" class="sidepanel-link active">Mine reiser</a>
+	  <a href="hrmineeiendommer.html" class="sidepanel-link">Mine eiendommer</a>
+      <a href="hrvarsler.html" class="sidepanel-link">Varsler</a>
+    </aside>
+	
+	<div class="kort-wrapper">
+        <a href="hrholmsbu.html" class="kort" target="_blank">
+        <img src="hus1.jpg" alt="Hus 1">
+        <div class="kort-info">
+            <span class="kort-rating">⭐ 4,67/5</span>
+            <span class="kort-gjester">4 gjester</span>
+        </div>
+        <div class="tekst">
+            <div class="sted">Holmsbu, Norge</div>
+            <div class="beskrivelse">Sjøhytte på Holmsbu</div>
+            <div class="pris">2500 NOK per natt</div>
+        </div>
+		<div class="reiseinfo">
+			<div class="tidligere-reise">Du var her: 1-5. september</div>
+			<div class="din-anmeldelse"> Din anmeldelse:</div> 
+			<div class="din-anmeldelse">⭐ 5 – Utrolig hyggelig vertskap</div>
+			<div class="din-anmeldelse">og alt var som beskrevet. Flott for fiske!</div>
+		</div>
+        </a>
+        <button type="button" class="kort-hjerte" title="Legg til i favoritter">
+			<span>&#10084;</span>
+        </button>
+    </div>
+
+</div>
+
+<script>
+    // Toggle heart active state
+    const kortHjerter = document.querySelectorAll('.kort-hjerte');
+    kortHjerter.forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.classList.toggle('active');
+      });
+    });
+</script>
+</body>
+</html>

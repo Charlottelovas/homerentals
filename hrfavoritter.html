@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favoritter</title>
+    <link rel="stylesheet" href="hr.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+<header>
+<div class="menywrapper">
+  <!-- Skjult checkbox -->
+  <input type="checkbox" id="meny-toggle" hidden>
+
+  <!-- Label fungerer som knapp -->
+  <label for="meny-toggle" class="profilmeny">
+    <span class="meny-ikon">&#9776;</span>
+    <img src="profilbilde.jpg" alt="Profil" class="profilbilde">
+  </label>
+
+  <!-- Menyvalg -->
+  <div class="meny-valg">
+    <a href="hrprofil.html" class="kontoknapp">Profil</a>
+    <a href="hrmelding.html" class="meldingknapp">Meldinger</a>
+    <a href="hrpost.html" class="postknapp">Lei ut hjemmet ditt</a>
+    <button type="button" class="loggknapp">Logg ut</button>
+  </div>
+</div>
+
+  <div class="logo">
+    <a href="hrforside.html">
+      <img src="hrlogo.jpg" alt="logo" class="logo">
+    </a>
+  </div>
+
+<a href="hrfavoritter.html" class="favoritt-hjerte" title="Favoritter">
+  <span>&#10084;</span>
+</a>
+<label for="popup" class="open-popup">Logg inn</label>
+
+<!-- Skjulte radio-knapper for tab-switching -->
+<input type="radio" name="auth-tab" id="login-tab" checked hidden>
+<input type="radio" name="auth-tab" id="register-tab" hidden>
+
+<!-- Pop-up bakgrunn -->
+<input type="checkbox" id="popup" class="popup-checkbox">
+<div class="popup">
+  <div class="popup-content">
+    <label for="popup" class="close-popup">&times;</label>
+
+    <!-- Topp-knapper -->
+    <div class="tab-buttons">
+      <label for="login-tab" class="tab-button">Logg inn</label>
+      <label for="register-tab" class="tab-button">Registrer deg</label>
+    </div>
+
+    <!-- Innhold for Logg inn -->
+    <div class="tab-content login-content">
+      <input type="text" placeholder="E-post">
+      <input type="password" placeholder="Passord">
+      <button>Logg inn</button>
+    </div>
+
+    <!-- Innhold for Registrer deg -->
+    <div class="tab-content register-content">
+      <input type="text" placeholder="Fullt navn">
+      <input type="email" placeholder="E-post">
+      <input type="password" placeholder="Passord">
+      <button>Registrer deg</button>
+    </div>
+  </div>
+</div>
+</header>
+
+  <div class="favorittinfo">
+  <h1>Oi! Her var det ingen favoritter...</h1>
+  <h3>Tips: Trykk på hjertet øverst til høyre når du ser noe du liker.</h3>
+  </div>

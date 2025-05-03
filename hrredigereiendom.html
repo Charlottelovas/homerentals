@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rediger Eiendom - Villa på Holmenkollen</title>
+    <link rel="stylesheet" href="hr.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+<header>
+<div class="menywrapper">
+  <!-- Skjult checkbox -->
+  <input type="checkbox" id="meny-toggle" hidden>
+
+  <!-- Label fungerer som knapp -->
+  <label for="meny-toggle" class="profilmeny">
+    <span class="meny-ikon">&#9776;</span>
+    <img src="profilbilde.jpg" alt="Profil" class="profilbilde">
+  </label>
+
+  <!-- Menyvalg -->
+  <div class="meny-valg">
+    <a href="hrprofil.html" class="kontoknapp">Profil</a>
+    <a href="hrmelding.html" class="meldingknapp">Meldinger</a>
+    <a href="hrpost.html" class="postknapp">Lei ut hjemmet ditt</a>
+    <button type="button" class="loggknapp">Logg ut</button>
+  </div>
+</div>
+
+  <div class="logo">
+    <a href="hrforside.html">
+      <img src="hrlogo.jpg" alt="logo" class="logo">
+    </a>
+  </div>
+
+<a href="hrfavoritter.html" class="favoritt-hjerte" title="Favoritter">
+  <span>&#10084;</span>
+</a>
+<label for="popup" class="open-popup">Logg inn</label>
+
+<!-- Skjulte radio-knapper for tab-switching -->
+<input type="radio" name="auth-tab" id="login-tab" checked hidden>
+<input type="radio" name="auth-tab" id="register-tab" hidden>
+
+<!-- Pop-up bakgrunn -->
+<input type="checkbox" id="popup" class="popup-checkbox">
+<div class="popup">
+  <div class="popup-content">
+    <label for="popup" class="close-popup">&times;</label>
+
+    <!-- Topp-knapper -->
+    <div class="tab-buttons">
+      <label for="login-tab" class="tab-button">Logg inn</label>
+      <label for="register-tab" class="tab-button">Registrer deg</label>
+    </div>
+
+    <!-- Innhold for Logg inn -->
+    <div class="tab-content login-content">
+      <input type="text" placeholder="E-post">
+      <input type="password" placeholder="Passord">
+      <button>Logg inn</button>
+    </div>
+
+    <!-- Innhold for Registrer deg -->
+    <div class="tab-content register-content">
+      <input type="text" placeholder="Fullt navn">
+      <input type="email" placeholder="E-post">
+      <input type="password" placeholder="Passord">
+      <button>Registrer deg</button>
+    </div>
+  </div>
+</div>
+</header>
+<main class="eiendom-detaljer">
+  <form class="edit-eiendom-form">
+    <h1 class="city-name"><input type="text" value="Oslo, Norge" name="city" style="width: 200px;"></h1>
+    <h2 class="property-title"><input type="text" value="Villa på Holmenkollen" name="title" style="width: 300px;"></h2>
+    <div class="bildegalleri-detalj">
+        <div class="stor-bilde">
+            <img src="holmenkollen.jpg" alt="Hovedbilde" id="mainImage">
+        </div>
+        <div class="sma-bilder">
+            <img src="holmenkollen1.jpg" alt="Bilde 1" class="thumb">
+            <img src="holmenkollen2.jpg" alt="Bilde 2" class="thumb">
+            <img src="holmenkollen3.jpg" alt="Bilde 3" class="thumb">
+            <img src="holmenkollen4.jpg" alt="Bilde 4" class="thumb">
+        </div>
+    </div>
+    <div class="kapasitet-info">
+        <input type="number" value="4" name="gjester" min="1" style="width: 50px;"> gjester
+        <span class="dot">&bull;</span>
+        <input type="number" value="2" name="senger" min="1" style="width: 50px;"> senger
+    </div>
+    <div class="info-seksjon">
+        <div class="venstre-info">
+            <div class="pris-rating">
+                <span class="star-rating">⭐ <input type="number" value="5.00" step="0.01" min="0" max="5" name="rating" style="width: 60px;">/5</span>
+                <span class="pris"><input type="number" value="2000" name="pris" style="width: 80px;"> NOK per natt</span>
+            </div>
+            <ul class="fasiliteter">
+                <li><input type="checkbox" name="fasiliteter" value="Wifi" checked> Wifi</li>
+                <li><input type="checkbox" name="fasiliteter" value="Parkering" checked> Parkering</li>
+                <li><input type="checkbox" name="fasiliteter" value="Basseng"> Basseng</li>
+                <li><input type="checkbox" name="fasiliteter" value="Sjøutsikt"> Sjøutsikt</li>
+                <li><input type="checkbox" name="fasiliteter" value="Kjøkken" checked> Kjøkken</li>
+                <li><input type="checkbox" name="fasiliteter" value="Vaskemaskin" checked> Vaskemaskin</li>
+                <li><input type="checkbox" name="fasiliteter" value="TV" checked> TV</li>
+                <li><input type="checkbox" name="fasiliteter" value="Klimaanlegg" checked> Klimaanlegg</li>
+                <li><input type="checkbox" name="fasiliteter" value="Handicap-vennlig"> Handicap-vennlig</li>
+                <li><input type="checkbox" name="fasiliteter" value="Balkong" checked> Balkong</li>
+            </ul>
+            <div class="beskrivelse">
+                <h3>Om boligen</h3>
+                <textarea name="beskrivelse" rows="5" style="width: 100%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod. Mauris non tempor quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum sed varius at, adipiscing vitae est.</textarea>
+            </div>
+        </div>
+        <div class="hoyre-info">
+            <button type="submit" class="book-btn lagre-btn">Lagre</button>
+        </div>
+    </div>
+    <section class="kartseksjon">
+      <h3>Adresse</h3>
+      <input type="text" name="adresse" value="Kongeveien 26, 0787 Oslo, Norge" style="width: 350px;">
+      <div id="map" style="height: 320px; border-radius: 12px; margin-bottom: 2em;"></div>
+    </section>
+  </form>
+  <section class="anmeldelser">
+      <h3>Anmeldelser</h3>
+      <div class="anmeldelse">
+          <div class="anmeldelse-header">
+              <span class="anmelder-navn">Laura S.</span>
+              <span class="anmeldelse-rating">⭐⭐⭐⭐⭐</span>
+          </div>
+          <p>Vakkert! Kommer gjerne tilbake.</p>
+      </div>
+  </section>
+</main>
+<div id="lightbox" class="lightbox" style="display:none;">
+  <span class="close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+</div>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+// Lightbox functionality
+const mainImage = document.getElementById('mainImage');
+const thumbs = document.querySelectorAll('.thumb');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.querySelector('.lightbox .close');
+function openLightbox(src) {
+  lightboxImg.src = src;
+  lightbox.style.display = 'flex';
+}
+mainImage.addEventListener('click', () => openLightbox(mainImage.src));
+thumbs.forEach(thumb => {
+  thumb.addEventListener('click', () => openLightbox(thumb.src));
+});
+closeBtn.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+});
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) lightbox.style.display = 'none';
+});
+// Leaflet map for Hønefoss
+// (unchanged)
+document.addEventListener('DOMContentLoaded', function() {
+  var map = L.map('map').setView([59.9702, 10.6781], 16); // Kongeveien 26, Oslo
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+  L.marker([59.9702, 10.6781]).addTo(map)
+      .bindPopup('Kongeveien 26, 0787 Oslo, Norge')
+      .openPopup();
+});
+// Prevent form submission (no backend)
+document.querySelector('.edit-eiendom-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('Lagring er ikke implementert.');
+});
+</script>
+<style>
+.lagre-btn {
+  background: #FF5A5F;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7em 2em;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.lagre-btn:hover {
+  background: #e11d48;
+}</style>
+</body>
+</html>

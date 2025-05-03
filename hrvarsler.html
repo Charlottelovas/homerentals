@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varsler</title>
+    <link rel="stylesheet" href="hr.css">
+
+
+</head>
+<header>
+<div class="menywrapper">
+  <!-- Skjult checkbox -->
+  <input type="checkbox" id="meny-toggle" hidden>
+
+  <!-- Label fungerer som knapp -->
+  <label for="meny-toggle" class="profilmeny">
+    <span class="meny-ikon">&#9776;</span>
+    <img src="profilbilde.jpg" alt="Profil" class="profilbilde">
+  </label>
+
+  <!-- Menyvalg -->
+  <div class="meny-valg">
+    <a href="hrprofil.html" class="kontoknapp">Profil</a>
+    <a href="hrmelding.html" class="meldingknapp">Meldinger</a>
+    <a href="hrpost.html" class="postknapp">Lei ut hjemmet ditt</a>
+    <button type="button" class="loggknapp">Logg ut</button>
+  </div>
+</div>
+
+  <div class="logo">
+    <a href="hrforside.html">
+      <img src="hrlogo.jpg" alt="logo" class="logo">
+    </a>
+  </div>
+
+<a href="hrfavoritter.html" class="favoritt-hjerte" title="Favoritter">
+  <span>&#10084;</span>
+</a>
+<label for="popup" class="open-popup">Logg inn</label>
+
+<!-- Skjulte radio-knapper for tab-switching -->
+<input type="radio" name="auth-tab" id="login-tab" checked hidden>
+<input type="radio" name="auth-tab" id="register-tab" hidden>
+
+<!-- Pop-up bakgrunn -->
+<input type="checkbox" id="popup" class="popup-checkbox">
+<div class="popup">
+  <div class="popup-content">
+    <label for="popup" class="close-popup">&times;</label>
+
+    <!-- Topp-knapper -->
+    <div class="tab-buttons">
+      <label for="login-tab" class="tab-button">Logg inn</label>
+      <label for="register-tab" class="tab-button">Registrer deg</label>
+    </div>
+
+    <!-- Innhold for Logg inn -->
+    <div class="tab-content login-content">
+      <input type="email" placeholder="E-post" required>
+      <input type="password" placeholder="Passord" required>
+      <button>Logg inn</button>
+    </div>
+
+    <!-- Innhold for Registrer deg -->
+    <div class="tab-content register-content">
+      <input type="text" placeholder="Fornavn" required>
+	  <input type="text" placeholder="Etternavn" required>
+      <input type="email" placeholder="E-post" required>
+	  <input type="tel" placeholder="Telefonnummer" required>
+      <input type="password" placeholder="Passord" required>
+	  <form>
+      <input type="checkbox" id="terms" name="terms" required>
+      <label for="terms">Jeg godkjenner vilkårene for medlemskap</label>
+      </form>
+      <button>Registrer deg</button>
+    </div>
+  </div>
+</div>
+</header>
+  <div class="profil-container">
+    <aside class="profil-sidepanel">
+      <a href="hrprofil.html" class="sidepanel-link">Profil</a>
+      <a href="hrminereiser.html" class="sidepanel-link">Mine reiser</a>
+	  <a href="hrmineeiendommer.html" class="sidepanel-link">Mine eiendommer</a>
+      <a href="hrvarsler.html" class="sidepanel-link active">Varsler</a>
+    </aside>
+	   <main class="varsler-innhold">
+      <h2>Dine varsler</h2>
+      <ul class="varsel-liste">
+        <li class="varsel ulest" onclick="markerSomLest(this)">
+          <span class="prikk"></span>
+          <div>
+            <strong>Du har fått en melding fra Ola Nordmann</strong>
+            <p>Hei! Ville bare informere om at jeg er fremme snart...</p>
+          </div>
+        </li>
+        <li class="varsel" onclick="markerSomLest(this)">
+          <div>
+            <strong>Eiendommen din har fått en ny anmeldelse</strong>
+            <p>En bruker har skrevet en ny omtale på "Hytte ved fjorden".</p>
+          </div>
+        </li>
+        <li class="varsel" onclick="markerSomLest(this)">
+          <div>
+            <strong>Din bestilling har blitt godkjent av host Kari Nordmann</strong>
+            <p>Velkommen til overnatting 14–17. mai. Vi gleder oss!</p>
+          </div>
+        </li>
+      </ul>
+    </main>
+  </div>
+
+  <script>
+    function markerSomLest(element) {
+      if (element.classList.contains('ulest')) {
+        element.classList.remove('ulest');
+        const prikk = element.querySelector('.prikk');
+        if (prikk) prikk.remove();
+      }
+    }
+  </script>
+</body>
+</html>

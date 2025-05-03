@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koselig hytte med sjøutsikt</title>
+    <link rel="stylesheet" href="hr.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+<header>
+<div class="menywrapper">
+  <!-- Skjult checkbox -->
+  <input type="checkbox" id="meny-toggle" hidden>
+
+  <!-- Label fungerer som knapp -->
+  <label for="meny-toggle" class="profilmeny">
+    <span class="meny-ikon">&#9776;</span>
+    <img src="profilbilde.jpg" alt="Profil" class="profilbilde">
+  </label>
+
+  <!-- Menyvalg -->
+  <div class="meny-valg">
+    <a href="hrprofil.html" class="kontoknapp">Profil</a>
+    <a href="hrmelding.html" class="meldingknapp">Meldinger</a>
+    <a href="hrpost.html" class="postknapp">Lei ut hjemmet ditt</a>
+    <button type="button" class="loggknapp">Logg ut</button>
+  </div>
+</div>
+
+  <div class="logo">
+    <a href="hrforside.html">
+      <img src="hrlogo.jpg" alt="logo" class="logo">
+    </a>
+  </div>
+
+<a href="hrfavoritter.html" class="favoritt-hjerte" title="Favoritter">
+  <span>&#10084;</span>
+</a>
+<label for="popup" class="open-popup">Logg inn</label>
+
+<!-- Skjulte radio-knapper for tab-switching -->
+<input type="radio" name="auth-tab" id="login-tab" checked hidden>
+<input type="radio" name="auth-tab" id="register-tab" hidden>
+
+<!-- Pop-up bakgrunn -->
+<input type="checkbox" id="popup" class="popup-checkbox">
+<div class="popup">
+  <div class="popup-content">
+    <label for="popup" class="close-popup">&times;</label>
+
+    <!-- Topp-knapper -->
+    <div class="tab-buttons">
+      <label for="login-tab" class="tab-button">Logg inn</label>
+      <label for="register-tab" class="tab-button">Registrer deg</label>
+    </div>
+
+    <!-- Innhold for Logg inn -->
+    <div class="tab-content login-content">
+      <input type="text" placeholder="E-post">
+      <input type="password" placeholder="Passord">
+      <button>Logg inn</button>
+    </div>
+
+    <!-- Innhold for Registrer deg -->
+    <div class="tab-content register-content">
+      <input type="text" placeholder="Fullt navn">
+      <input type="email" placeholder="E-post">
+      <input type="password" placeholder="Passord">
+      <button>Registrer deg</button>
+    </div>
+  </div>
+</div>
+</header>
+    <main class="eiendom-detaljer">
+        <h1 class="city-name">Kristiansand, Norge</h1>
+        <h2 class="property-title">Koselig hytte med sjøutsikt <span class="dot">&bull;</span> Helt hjem</h2>
+        <div class="bildegalleri-detalj">
+            <div class="stor-bilde">
+                <img src="hus5.jpg" alt="Hovedbilde" id="mainImage">
+            </div>
+            <div class="sma-bilder">
+                <img src="hus5_1.jpg" alt="Bilde 1" class="thumb">
+                <img src="hus5_2.jpg" alt="Bilde 2" class="thumb">
+                <img src="hus5_3.jpg" alt="Bilde 3" class="thumb">
+                <img src="hus5_4.jpg" alt="Bilde 4" class="thumb">
+            </div>
+        </div>
+		<div class="kapasitet-info">
+            <span>6 gjester</span>
+            <span class="dot">&bull;</span>
+            <span>3 senger</span>
+        </div>
+        <div class="info-seksjon">
+            <div class="venstre-info">
+                <div class="pris-rating">
+                    <span class="star-rating">⭐ 5,00/5</span>
+                    <span class="pris">3 500 NOK per natt</span>
+                </div>
+                <ul class="fasiliteter">
+                    <li>Wi-fi</li>
+                    <li>Parkering</li>
+                    <li>Kjøkken</li>
+                    <li>Sjøutsikt</li>
+                    <li>Vaskemaskin</li>
+                    <li>TV</li>
+					<li>Klimaanlegg</li>
+					<li>Balkong</li>
+                </ul>
+                <div class="beskrivelse">
+                    <h3>Om boligen</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod. Mauris non tempor quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum sed varius at, adipiscing vitae est.</p>
+                </div>
+            </div>
+            <div class="hoyre-info">
+                <a href="hrbooking.html" class="book-btn">Book nå</a>
+            </div>
+        </div>
+        <section class="anmeldelser">
+            <h3>Anmeldelser</h3>
+            <div class="anmeldelse">
+                <div class="anmeldelse-header">
+                    <span class="anmelder-navn">Mina L.</span>
+                    <span class="anmeldelse-rating">⭐⭐⭐⭐⭐</span>
+                </div>
+                <p>Fantastisk utsikt! Koselig hytte. Kommer gjerne tilbake.</p>
+            </div>
+
+            <form class="review-form">
+                <label for="rating">Din vurdering:</label>
+                <select id="rating" name="rating">
+                    <option value="">Velg stjerner</option>
+                    <option value="5">5 ⭐</option>
+                    <option value="4">4 ⭐</option>
+                    <option value="3">3 ⭐</option>
+                    <option value="2">2 ⭐</option>
+                    <option value="1">1 ⭐</option>
+                </select>
+                <label for="review-text">Din anmeldelse:</label>
+                <textarea id="review-text" name="review-text" rows="3" placeholder="Skriv din anmeldelse..."></textarea>
+                <button type="submit">Send inn</button>
+                <div class="review-error" style="display:none;color:#c00;margin-top:8px;">For å skrive en anmeldelse må du først ha bodd på eiendommen.</div>
+            </form>
+        </section>
+        <section class="kartseksjon">
+          <h3>Adresse</h3>
+          <div id="map" style="height: 320px; border-radius: 12px; margin-bottom: 2em;"></div>
+          <p>Manneviga 23, 4634 Kristiansand S, Norge</p>
+        </section>
+    </main>
+    <div id="lightbox" class="lightbox" style="display:none;">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+    // Lightbox functionality
+    const mainImage = document.getElementById('mainImage');
+    const thumbs = document.querySelectorAll('.thumb');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.lightbox .close');
+
+    function openLightbox(src) {
+        lightboxImg.src = src;
+        lightbox.style.display = 'flex';
+    }
+
+    mainImage.addEventListener('click', () => openLightbox(mainImage.src));
+    thumbs.forEach(thumb => {
+        thumb.addEventListener('click', () => openLightbox(thumb.src));
+    });
+    closeBtn.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) lightbox.style.display = 'none';
+    });
+
+    // Review form error
+    document.querySelector('.review-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        this.querySelector('.review-error').style.display = 'block';
+    });
+
+    // Leaflet map for Kristiansand
+    document.addEventListener('DOMContentLoaded', function() {
+        var map = L.map('map').setView([58.1247, 8.0306], 16); // Manneviga 23, Kristiansand S
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+        L.marker([58.1247, 8.0306]).addTo(map)
+            .bindPopup('Manneviga 23, 4634 Kristiansand S')
+            .openPopup();
+    });
+    </script>
+</body>
+</html>
