@@ -336,18 +336,34 @@ header {
 }
 
 
+
+/*Filterboks*/
+.filter-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 2rem 0 1rem 0; /* More space above and below */
+  padding-right: 1.5rem;
+}
+
 .filter-boks {
-    border: 2px solid #333;       /* Gjør kanten tykkere og mørkere */
+    border: 3.5px solid #333;       /* Gjør kanten tykkere og mørkere */
     padding: 8px 16px;            /* Litt innvendig luft (kan justeres) */
     margin-top: 16px;             /* Ekstra luft over knappen */
     margin-bottom: 16px;          /* Ekstra luft under knappen */
     border-radius: 5px;           /* (valgfritt) avrundede hjørner */
     background-color: white;      /* (valgfritt) hvit bakgrunn */
     cursor: pointer;              /* Endrer musepeker ved hover */
-  color:#FF5A5F;
+	color:#FF5A5F;
+	font-weight:bold;
 }
 .filter-boks:hover{
   color:#e11d48;
+}
+
+.filter-bilde{
+	height: 1em; /* Matcher teksthøyden */
+	vertical-align: middle;
+	margin-right: 8px; /* Litt avstand til teksten */
 }
 
 .kategori {
@@ -1022,12 +1038,12 @@ input[name="romtype"]:checked + .romtype-knapp {
     min-width: 300px;
 }
 .hoyre-info {
-    flex: 1;
-    min-width: 200px;
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px; /* Avstand mellom knappene */
 }
+
 .book-btn {
     display: inline-block;
     background: #FF5A5F;
@@ -1503,4 +1519,182 @@ input[name="romtype"]:checked + .romtype-knapp {
   line-height: 1;
   font-weight: bold;
   margin-top: -2px;
+}
+
+
+
+
+
+/*profil*/
+
+
+.gjennomsnittsrating-info {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  background: #f8f8f8;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.rating-label {
+  margin-right: 0.7rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.rating-value {
+  font-size: 1.4rem;
+  color: #FFB400; /* Gold for the star */
+  font-weight: bold;
+}
+
+.opprettet-info{
+	color: #888;
+	font-style: italic;
+}
+
+.brukertype {
+  height: 40px;        /* Øker høyden direkte */
+  padding: 6px 12px;   /* Litt innvendig luft (valgfritt) */
+  font-size: 16px;     /* Gjør også teksten litt større */
+  border-radius: 5px;  /* (valgfritt) for avrundede hjørner */
+}
+
+
+
+
+
+
+
+/*eiendommer*/
+.sendmelding-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 16px 36px;
+    background-color: #FF5A5F;
+    color: white;
+    font-weight: bold;
+	font-size:1.1rem;
+    border: none;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.sendmelding-btn:hover {
+    background-color: #e11d48;
+}
+
+
+
+
+
+
+.notification-wrapper {
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.notification-bell:hover {
+  color: #FF5A5F;
+}
+.notification-dropdown {
+  display: none;
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: #fff;
+  min-width: 220px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+  border-radius: 10px;
+  z-index: 1002;
+  padding: 0.5rem 0;
+}
+.notification-dropdown.show {
+  display: block;
+}
+.notification-item {
+  padding: 12px 18px;
+  font-size: 1rem;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+  text-decoration: none;
+  display: block;
+  transition: background 0.18s;
+  cursor: pointer;
+}
+.notification-item:last-child {
+  border-bottom: none;
+}
+.notification-item:hover, .notification-item.top-notif:hover {
+  background: #f8f8f8;
+}
+.notification-item.top-notif {
+  font-weight: bold;
+  color: #FF5A5F;
+}
+
+.notification-bell {
+  background: #f3f3f3;
+  border: none;
+  font-size: 1.3em;
+  cursor: pointer;
+  color: #888;
+  padding: 0;
+  outline: none;
+  transition: background 0.2s, color 0.2s;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+}
+.notification-bell span {
+  font-size: 1.2em;
+  color: #888;
+}
+.notification-bell:hover, .notification-bell:focus {
+  background: #FF5A5F;
+  color: #fff;
+}
+.notification-bell:hover span, .notification-bell:focus span {
+  color: #fff;
+}
+
+.main-footer {
+  width: 100%;
+  background: #f8f8f8;
+  padding: 24px 0 18px 0;
+  text-align: center;
+  font-size: 1rem;
+  color: #666;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 40px;
+}
+.footer-links {
+  display: inline-block;
+  gap: 18px;
+  font-size: 1.05em;
+}
+.footer-links a {
+  color: #666;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.2s;
+}
+.footer-links a:hover {
+  color: #FF5A5F;
+  text-decoration: underline;
+}
+.footer-separator {
+  color: #bbb;
+  margin: 0 4px;
 }

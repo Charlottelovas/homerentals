@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fjellhytte med anneks</title>
+    <title>Booking</title>
     <link rel="stylesheet" href="hr.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
 </head>
-<body>
 <header>
 <div class="menywrapper">
   <!-- Skjult checkbox -->
@@ -23,7 +23,7 @@
   <div class="meny-valg">
     <a href="hrprofil.html" class="kontoknapp">Profil</a>
     <a href="hrmelding.html" class="meldingknapp">Meldinger</a>
-    <a href="hrpost.html" class="postknapp">Lei ut hjemmet ditt</a>
+    <a href="hrpost.html" class="postknapp">Lei ut bolig</a>
     <button type="button" class="loggknapp">Logg ut</button>
   </div>
 </div>
@@ -34,11 +34,21 @@
     </a>
   </div>
 
+<!-- Bell icon with notifications dropdown -->
+<div class="notification-wrapper">
+  <button class="notification-bell" id="notifBell" aria-label="Varsler">
+    <span>&#128276;</span>
+  </button>
+  <div class="notification-dropdown" id="notifDropdown">
+    <a href="hrholmsbu.html" class="notification-item top-notif">Ny anmeldelse venter på deg!</a>
+    <div class="notification-item">Lorem Ipsum</div>
+    <div class="notification-item">Lorem Ipsum</div>
+  </div>
+</div>
 <a href="hrfavoritter.html" class="favoritt-hjerte" title="Favoritter">
   <span>&#10084;</span>
 </a>
 <label for="popup" class="open-popup">Logg inn</label>
-
 <!-- Skjulte radio-knapper for tab-switching -->
 <input type="radio" name="auth-tab" id="login-tab" checked hidden>
 <input type="radio" name="auth-tab" id="register-tab" hidden>
@@ -57,16 +67,25 @@
 
     <!-- Innhold for Logg inn -->
     <div class="tab-content login-content">
-      <input type="text" placeholder="E-post">
-      <input type="password" placeholder="Passord">
+      <input type="email" placeholder="E-post" required>
+      <input type="password" placeholder="Passord" required>
       <button>Logg inn</button>
     </div>
 
     <!-- Innhold for Registrer deg -->
     <div class="tab-content register-content">
-      <input type="text" placeholder="Fullt navn">
-      <input type="email" placeholder="E-post">
-      <input type="password" placeholder="Passord">
+      <input type="text" placeholder="Fornavn" required>
+	  <input type="text" placeholder="Etternavn" required>
+      <input type="email" placeholder="E-post" required>
+	  <input type="tel" placeholder="Telefonnummer" required>
+      <input type="password" placeholder="Passord" required>
+	  	  <input type="text" placeholder="Adresse" required>
+	  <input type="text" placeholder="By" required>
+	  <input type="text" placeholder="Postnummer" required>
+	  <form>
+      <input type="checkbox" id="terms" name="terms" required>
+      <label for="terms">Jeg godkjenner<a href="hrvilkar.html" class="terms-link"> vilkårene for medlemskap</label></a>
+      </form>
       <button>Registrer deg</button>
     </div>
   </div>
@@ -101,5 +120,28 @@
         document.getElementById('errorMsg').style.display = 'block';
     });
     </script>
+	 <script>
+    // Simple dropdown logic
+    const bell = document.getElementById('notifBell');
+    const dropdown = document.getElementById('notifDropdown');
+    bell.addEventListener('click', function(e) {
+      e.stopPropagation();
+      dropdown.classList.toggle('show');
+    });
+    document.addEventListener('click', function() {
+      dropdown.classList.remove('show');
+    });
+    </script>
+
+	
+	<footer class="main-footer">
+  <div class="footer-links">
+    <a href="hrvilkar.html">Vilkår og betingelser</a>
+    <span class="footer-separator">|</span>
+    <a href="hrkontakt.html">Kontakt oss</a>
+    <span class="footer-separator">|</span>
+    <a href="hromoss.html">Om oss</a>
+  </div>
+</footer>
 </body>
 </html>

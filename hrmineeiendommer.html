@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mine eiendommer</title>
     <link rel="stylesheet" href="hr.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
 </head>
 <header>
@@ -23,7 +23,7 @@
   <div class="meny-valg">
     <a href="hrprofil.html" class="kontoknapp">Profil</a>
     <a href="hrmelding.html" class="meldingknapp">Meldinger</a>
-    <a href="hrpost.html" class="postknapp">Lei ut hjemmet ditt</a>
+    <a href="hrpost.html" class="postknapp">Lei ut bolig</a>
     <button type="button" class="loggknapp">Logg ut</button>
   </div>
 </div>
@@ -34,11 +34,21 @@
     </a>
   </div>
 
+<!-- Bell icon with notifications dropdown -->
+<div class="notification-wrapper">
+  <button class="notification-bell" id="notifBell" aria-label="Varsler">
+    <span>&#128276;</span>
+  </button>
+  <div class="notification-dropdown" id="notifDropdown">
+    <a href="hrholmsbu.html" class="notification-item top-notif">Ny anmeldelse venter på deg!</a>
+    <div class="notification-item">Lorem Ipsum</div>
+    <div class="notification-item">Lorem Ipsum</div>
+  </div>
+</div>
 <a href="hrfavoritter.html" class="favoritt-hjerte" title="Favoritter">
   <span>&#10084;</span>
 </a>
 <label for="popup" class="open-popup">Logg inn</label>
-
 <!-- Skjulte radio-knapper for tab-switching -->
 <input type="radio" name="auth-tab" id="login-tab" checked hidden>
 <input type="radio" name="auth-tab" id="register-tab" hidden>
@@ -69,9 +79,12 @@
       <input type="email" placeholder="E-post" required>
 	  <input type="tel" placeholder="Telefonnummer" required>
       <input type="password" placeholder="Passord" required>
+	  	  <input type="text" placeholder="Adresse" required>
+	  <input type="text" placeholder="By" required>
+	  <input type="text" placeholder="Postnummer" required>
 	  <form>
       <input type="checkbox" id="terms" name="terms" required>
-      <label for="terms">Jeg godkjenner vilkårene for medlemskap</label>
+      <label for="terms">Jeg godkjenner<a href="hrvilkar.html" class="terms-link"> vilkårene for medlemskap</label></a>
       </form>
       <button>Registrer deg</button>
     </div>
@@ -81,12 +94,11 @@
   <div class="profil-container">
     <aside class="profil-sidepanel">
       <a href="hrprofil.html" class="sidepanel-link">Profil</a>
-      <a href="hrminereiser.html" class="sidepanel-link">Mine reiser</a>
+      <a href="hrminereiser.html" class="sidepanel-link">Mine bookinger</a>
 	  <a href="hrmineeiendommer.html" class="sidepanel-link active">Mine eiendommer</a>
-      <a href="hrvarsler.html" class="sidepanel-link">Varsler</a>
     </aside>
 	<div class="kort-wrapper">
-        <a href="hrhosteiendom.html" class="kort" target="_blank">
+        <a href="hrhosteiendom.html" class="kort" >
         <img src="Holmenkollen.jpg" alt="Hus 1">
         <div class="kort-info">
             <span class="kort-rating">⭐ 5,00/5</span>
@@ -117,5 +129,27 @@
       });
     });
 </script>
+ <script>
+    // Simple dropdown logic
+    const bell = document.getElementById('notifBell');
+    const dropdown = document.getElementById('notifDropdown');
+    bell.addEventListener('click', function(e) {
+      e.stopPropagation();
+      dropdown.classList.toggle('show');
+    });
+    document.addEventListener('click', function() {
+      dropdown.classList.remove('show');
+    });
+    </script>
+
+<footer class="main-footer">
+  <div class="footer-links">
+    <a href="hrvilkar.html">Vilkår og betingelser</a>
+    <span class="footer-separator">|</span>
+    <a href="hrkontakt.html">Kontakt oss</a>
+    <span class="footer-separator">|</span>
+    <a href="hromoss.html">Om oss</a>
+  </div>
+</footer>
 </body>
 </html>
