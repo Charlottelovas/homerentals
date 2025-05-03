@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forside</title>
+    <link rel="stylesheet" href="hr.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+</head>
+<header>
+<div class="menywrapper">
+  <!-- Skjult checkbox -->
+  <input type="checkbox" id="meny-toggle" hidden>
+
+  <!-- Label fungerer som knapp -->
+  <label for="meny-toggle" class="profilmeny">
+    <span class="meny-ikon">&#9776;</span>
+    <img src="profilbilde.jpg" alt="Profil" class="profilbilde">
+  </label>
+
+  <!-- Menyvalg -->
+  <div class="meny-valg">
+    <a href="hrprofil.html" class="kontoknapp">Profil</a>
+    <a href="hrmelding.html" class="meldingknapp">Meldinger</a>
+    <a href="hrpost.html" class="postknapp">Lei ut hjemmet ditt</a>
+    <button type="button" class="loggknapp">Logg ut</button>
+  </div>
+</div>
+
+  <div class="logo">
+    <a href="index.html">
+      <img src="hrlogo.jpg" alt="logo" class="logo">
+    </a>
+  </div>
+
+<a href="hrfavoritter.html" class="favoritt-hjerte" title="Favoritter">
+  <span>&#10084;</span>
+</a>
+<label for="popup" class="open-popup">Logg inn</label>
+
+<!-- Skjulte radio-knapper for tab-switching -->
+<input type="radio" name="auth-tab" id="login-tab" checked hidden>
+<input type="radio" name="auth-tab" id="register-tab" hidden>
+
+<!-- Pop-up bakgrunn -->
+<input type="checkbox" id="popup" class="popup-checkbox">
+<div class="popup">
+  <div class="popup-content">
+    <label for="popup" class="close-popup">&times;</label>
+
+    <!-- Topp-knapper -->
+    <div class="tab-buttons">
+      <label for="login-tab" class="tab-button">Logg inn</label>
+      <label for="register-tab" class="tab-button">Registrer deg</label>
+    </div>
+
+    <!-- Innhold for Logg inn -->
+    <div class="tab-content login-content">
+      <input type="email" placeholder="E-post" required>
+      <input type="password" placeholder="Passord" required>
+      <button>Logg inn</button>
+    </div>
+
+    <!-- Innhold for Registrer deg -->
+    <div class="tab-content register-content">
+      <input type="text" placeholder="Fornavn" required>
+	  <input type="text" placeholder="Etternavn" required>
+      <input type="email" placeholder="E-post" required>
+	  <input type="tel" placeholder="Telefonnummer" required>
+      <input type="password" placeholder="Passord" required>
+	  <form>
+      <input type="checkbox" id="terms" name="terms" required>
+      <label for="terms">Jeg godkjenner<a href="hrvilkar.html" class="terms-link"> vilkårene for medlemskap</label></a>
+      </form>
+      <button>Registrer deg</button>
+    </div>
+  </div>
+</div>
+</header>
+
+
+    <div class="sokeboks-bakgrunn">
+
+	
+        <div class="sokeboks">
+            <form class="sokefelt">
+                <input type="text" placeholder="Hvor">
+                <input id="innsjekk" type="text" placeholder="Innsjekk">
+                <input id="utsjekk" type="text" placeholder="Utsjekk">
+                <div class="gjester-wrapper">
+                    <input type="text" placeholder="Gjester" id="gjesterInput" readonly>
+                    <div class="gjestevalg" id="gjestevalg">
+                        <div class="rad">
+                            <span>Voksne 16+</span>
+                            <div class="kontroll">
+                                <button type="button" onclick="endreGjester('voksne', -1)">-</button>
+                                <span class="antall" id="voksneAntall">0</span>
+                                <button type="button" onclick="endreGjester('voksne', 1)">+</button>
+                            </div>
+                        </div>
+                        <div class="rad">
+                            <span>Barn 0–15</span>
+                            <div class="kontroll">
+                                <button type="button" onclick="endreGjester('barn', -1)">-</button>
+                                <span class="antall" id="barnAntall">0</span>
+                                <button type="button" onclick="endreGjester('barn', 1)">+</button>
+                            </div>
+                        </div>
+
+                        <button type="button" class="ferdig" onclick="oppdaterGjesteInput()">Ferdig</button>
+                    </div>
+                </div>
+                <button type="submit">Søk</button>
+            </form>
+        </div>
+	</div>
+
+
+        <button class="filter-boks" for="filter-popup">Filter</button>
+
+    </div>
+
+    <div class="bildegalleri">
+        <div class="kort-wrapper">
+            <a href="hrholmsbu.html" class="kort" target="_blank">
+                <img src="hus1.jpg" alt="Hus 1">
+                <div class="kort-info">
+                    <span class="kort-rating">⭐ 4,67/5</span>
+                    <span class="kort-gjester">4 gjester</span>
+                </div>
+                <div class="tekst">
+                    <div class="sted">Holmsbu, Norge</div>
+                    <div class="beskrivelse">Sjøhytte på Holmsbu</div>
+                    <div class="pris">2500 NOK per natt</div>
+                </div>
+            </a>
+            <button type="button" class="kort-hjerte" title="Legg til i favoritter">
+                <span>&#10084;</span>
+            </button>
+        </div>
+        <div class="kort-wrapper">
+            <a href="hrhonefoss.html" class="kort" target="_blank">
+                <img src="hus2.jpg" alt="Hus 2">
+                <div class="kort-info">
+                    <span class="kort-rating">⭐ 4,00/5</span>
+                    <span class="kort-gjester">4 gjester</span>
+                </div>
+                <div class="tekst">
+                    <div class="sted">Hønefoss, Norge</div>
+                    <div class="beskrivelse">Sentrumsnært hus</div>
+                    <div class="pris">1 950 NOK per natt</div>
+                </div>
+            </a>
+            <button type="button" class="kort-hjerte" title="Legg til i favoritter">
+                <span>&#10084;</span>
+            </button>
+        </div>
+        <div class="kort-wrapper">
+            <a href="hrbergen.html" class="kort" target="_blank">
+                <img src="hus3.jpg" alt="Hus 3">
+                <div class="kort-info">
+                    <span class="kort-rating">⭐ 3,50/5</span>
+                    <span class="kort-gjester">4 gjester</span>
+                </div>
+                <div class="tekst">
+                    <div class="sted">Bergen, Norge</div>
+                    <div class="beskrivelse">Koselig hus med utsikt</div>
+                    <div class="pris">3 100 NOK per natt</div>
+                </div>
+            </a>
+            <button type="button" class="kort-hjerte" title="Legg til i favoritter">
+                <span>&#10084;</span>
+            </button>
+        </div>
+        <div class="kort-wrapper">
+            <a href="hrstavanger.html" class="kort" target="_blank">
+                <img src="hus4.jpg" alt="Hus 4">
+                <div class="kort-info">
+                    <span class="kort-rating">⭐ 4,50/5</span>
+                    <span class="kort-gjester">2 gjester</span>
+                </div>
+                <div class="tekst">
+                    <div class="sted">Stavanger, Norge</div>
+                    <div class="beskrivelse">Leilighet ved fjorden</div>
+                    <div class="pris">1 500 NOK per natt</div>
+                </div>
+            </a>
+            <button type="button" class="kort-hjerte" title="Legg til i favoritter">
+                <span>&#10084;</span>
+            </button>
+        </div>
+        <div class="kort-wrapper">
+            <a href="hrkristiansand.html" class="kort" target="_blank">
+                <img src="hus5.jpg" alt="Hus 5">
+                <div class="kort-info">
+                    <span class="kort-rating">⭐ 5,00/5</span>
+                    <span class="kort-gjester">6 gjester</span>
+                </div>
+                <div class="tekst">
+                    <div class="sted">Kristiansand, Norge</div>
+                    <div class="beskrivelse">Koselig hytte med sjøutsikt</div>
+                    <div class="pris">3 500 NOK per natt</div>
+                </div>
+            </a>
+            <button type="button" class="kort-hjerte" title="Legg til i favoritter">
+                <span>&#10084;</span>
+            </button>
+        </div>
+        <div class="kort-wrapper">
+            <a href="hroslo.html" class="kort" target="_blank">
+                <img src="hus6.jpg" alt="Hus 6">
+                <div class="kort-info">
+                    <span class="kort-rating">⭐ 4,50/5</span>
+                    <span class="kort-gjester">2 gjester</span>
+                </div>
+                <div class="tekst">
+                    <div class="sted">Oslo, Norge</div>
+                    <div class="beskrivelse">Leilighet nær sentrum</div>
+                    <div class="pris">1 500 NOK per natt</div>
+                </div>
+            </a>
+            <button type="button" class="kort-hjerte" title="Legg til i favoritter">
+                <span>&#10084;</span>
+            </button>
+        </div>
+        <div class="kort-wrapper">
+            <a href="hrtrondheim.html" class="kort" target="_blank">
+                <img src="hus7.jpg" alt="Hus 7">
+                <div class="kort-info">
+                    <span class="kort-rating">⭐ 4,00/5</span>
+                    <span class="kort-gjester">2 gjester</span>
+                </div>
+                <div class="tekst">
+                    <div class="sted">Trondheim, Norge</div>
+                    <div class="beskrivelse">Rom i koselig leilighet</div>
+                    <div class="pris">500 NOK per natt</div>
+                </div>
+            </a>
+            <button type="button" class="kort-hjerte" title="Legg til i favoritter">
+                <span>&#10084;</span>
+            </button>
+        </div>
+        <div class="kort-wrapper">
+            <a href="hruvdal.html" class="kort" target="_blank">
+                <img src="hus8.jpg" alt="Hus 8">
+                <div class="kort-info">
+                    <span class="kort-rating">⭐ 5,00/5</span>
+                    <span class="kort-gjester">13 gjester</span>
+                </div>
+                <div class="tekst">
+                    <div class="sted">Uvdal, Norge</div>
+                    <div class="beskrivelse">Fjellhytte med anneks</div>
+                    <div class="pris">Fra 4 000 NOK per natt</div>
+                </div>
+            </a>
+            <button type="button" class="kort-hjerte" title="Legg til i favoritter">
+                <span>&#10084;</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        flatpickr("#innsjekk", {
+            minDate: "today",
+            dateFormat: "Y-m-d",
+            onChange: function(selectedDates, dateStr, instance) {
+                utsjekkCalendar.set("minDate", dateStr);
+            }
+        });
+
+        const utsjekkCalendar = flatpickr("#utsjekk", {
+            minDate: "today",
+            dateFormat: "Y-m-d"
+        });
+
+        const gjesterInput = document.getElementById("gjesterInput");
+        const gjestevalg = document.getElementById("gjestevalg");
+
+        gjesterInput.addEventListener("click", () => {
+            gjestevalg.style.display = "block";
+        });
+
+        function oppdaterGjesteInput() {
+            const voksne = document.getElementById("voksneAntall").textContent;
+            const barn = document.getElementById("barnAntall").textContent;
+            gjesterInput.value = `${voksne} voksne, ${barn} barn`;
+            gjestevalg.style.display = "none";
+        }
+
+        function endreGjester(type, endring) {
+            const antallEl = document.getElementById(type + "Antall");
+            let verdi = parseInt(antallEl.textContent);
+            let maks = type === "voksne" ? 20 : 20;
+
+            verdi += endring;
+
+            if (verdi < 0) verdi = 0;
+            if (verdi > maks) verdi = maks;
+
+            antallEl.textContent = (verdi === maks && maks === 20) ? "20+" : verdi;
+        }
+
+        document.addEventListener("click", function(event) {
+            if (!gjestevalg.contains(event.target) && event.target !== gjesterInput) {
+                gjestevalg.style.display = "none";
+            }
+        });
+    </script>
+
+    <!-- Filter pop-up structure -->
+    <input type="checkbox" id="filter-popup" class="popup-checkbox">
+    <div class="filter-popup">
+      <div class="filter-popup-content">
+        <label for="filter-popup" class="close-popup">&times;</label>
+        <h2>Type overnatting</h2>
+        <div class="filter-type-buttons">
+          <button type="button" class="filter-type-btn">Delt rom</button>
+          <button type="button" class="filter-type-btn">Privat rom</button>
+          <button type="button" class="filter-type-btn">Helt hjem</button>
+        </div>
+        <h3>Fasiliteter</h3>
+        <div class="filter-fasiliteter">
+          <label><input type="checkbox"> Wifi</label>
+          <label><input type="checkbox"> Parkering</label>
+          <label><input type="checkbox"> Basseng</label>
+          <label><input type="checkbox"> Sjøutsikt</label>
+          <label><input type="checkbox"> Kjøkken</label>
+          <label><input type="checkbox"> Vaskemaskin</label>
+          <label><input type="checkbox"> TV</label>
+          <label><input type="checkbox"> Klimaanlegg</label>
+          <label><input type="checkbox"> Handicap-vennlig</label>
+          <label><input type="checkbox"> Balkong</label>
+        </div>
+        <button class="filter-ferdig-btn">Ferdig</button>
+      </div>
+    </div>
+    <script>
+    // Open filter popup when filter button is clicked
+    const filterBtn = document.querySelector('.filter-boks');
+    const filterPopupCheckbox = document.getElementById('filter-popup');
+    filterBtn.addEventListener('click', function() {
+      filterPopupCheckbox.checked = true;
+    });
+    // Close popup on 'Ferdig' button
+    const ferdigBtn = document.querySelector('.filter-ferdig-btn');
+    ferdigBtn.addEventListener('click', function() {
+      filterPopupCheckbox.checked = false;
+    });
+    // Mutually exclusive filter-type buttons
+    const typeBtns = document.querySelectorAll('.filter-type-btn');
+    typeBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        typeBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+    </script>
+    <script>
+    // Toggle heart active state
+    const kortHjerter = document.querySelectorAll('.kort-hjerte');
+    kortHjerter.forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.classList.toggle('active');
+      });
+    });
+    </script>
+</body>
+</html>
