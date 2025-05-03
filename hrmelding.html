@@ -7,30 +7,125 @@
     <link rel="stylesheet" href="hr.css">
 
 
+</head>
 <body>
-    <header>
-        <div class="logo">
-			<a href="hrforside.html">
-				<img src="logo.jpg" alt="logo" class="logo">
-			</a>
-		</div>
-        <div class="profil">
-            <a href="hrprofil.html">
-                <img src="profilbilde.jpg" alt="Profil" class="profilbilde">
-            </a>
-            <input type="checkbox" id="meny-toggle">
-            <label for="meny-toggle" class="meny-ikon">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-            <div class="meny-valg">
-                <a href="hrprofil.html" class="kontoknapp">Profil</a>
-                <a href="hrmelding.html" class="meldingknapp">Meldinger</a>
-                <a href="hrpost.html" class="postknapp">Lei ut hjemmet ditt</a>
-                <a href="hrlogg.html" class="loggknapp">Logg inn</a>
-				<a href="hrregistrer.html" class="registrerknapp">Registrer deg</a>            
-			</div>
-        </div>
-    </header>
+<header>
+<div class="menywrapper">
+  <!-- Skjult checkbox -->
+  <input type="checkbox" id="meny-toggle" hidden>
+
+  <!-- Label fungerer som knapp -->
+  <label for="meny-toggle" class="profilmeny">
+    <span class="meny-ikon">&#9776;</span>
+    <img src="profilbilde.jpg" alt="Profil" class="profilbilde">
+  </label>
+
+  <!-- Menyvalg -->
+  <div class="meny-valg">
+    <a href="hrprofil.html" class="kontoknapp">Profil</a>
+    <a href="hrmelding.html" class="meldingknapp">Meldinger</a>
+    <a href="hrpost.html" class="postknapp">Lei ut hjemmet ditt</a>
+    <button type="button" class="loggknapp">Logg ut</button>
+  </div>
+</div>
+
+  <div class="logo">
+    <a href="index.html">
+      <img src="hrlogo.jpg" alt="logo" class="logo">
+    </a>
+  </div>
+
+<a href="hrfavoritter.html" class="favoritt-hjerte" title="Favoritter">
+  <span>&#10084;</span>
+</a>
+<label for="popup" class="open-popup">Logg inn</label>
+
+<!-- Skjulte radio-knapper for tab-switching -->
+<input type="radio" name="auth-tab" id="login-tab" checked hidden>
+<input type="radio" name="auth-tab" id="register-tab" hidden>
+
+<!-- Pop-up bakgrunn -->
+<input type="checkbox" id="popup" class="popup-checkbox">
+<div class="popup">
+  <div class="popup-content">
+    <label for="popup" class="close-popup">&times;</label>
+
+    <!-- Topp-knapper -->
+    <div class="tab-buttons">
+      <label for="login-tab" class="tab-button">Logg inn</label>
+      <label for="register-tab" class="tab-button">Registrer deg</label>
+    </div>
+
+    <!-- Innhold for Logg inn -->
+    <div class="tab-content login-content">
+      <input type="email" placeholder="E-post" required>
+      <input type="password" placeholder="Passord" required>
+      <button>Logg inn</button>
+    </div>
+
+    <!-- Innhold for Registrer deg -->
+    <div class="tab-content register-content">
+      <input type="text" placeholder="Fornavn" required>
+	  <input type="text" placeholder="Etternavn" required>
+      <input type="email" placeholder="E-post" required>
+	  <input type="tel" placeholder="Telefonnummer" required>
+      <input type="password" placeholder="Passord" required>
+	  <form>
+      <input type="checkbox" id="terms" name="terms" required>
+      <label for="terms">Jeg godkjenner vilkårene for medlemskap</label>
+      </form>
+      <button>Registrer deg</button>
+    </div>
+  </div>
+</div>
+</header>
+
+<main class="meldinger-container">
+  <aside class="inbox">
+    <div class="samtale" onclick="visSamtale('ola')">Ola Nordmann</div>
+    <div class="samtale" onclick="visSamtale('kari')">Kari Nordmann</div>
+  </aside>
+
+  <section class="meldingsvisning">
+    <div id="ola" class="melding-logg aktiv">
+      <div class="melding mottatt">Hei, er hytta ledig i helgen?</div>
+      <div class="melding sendt">Hei! Ja, den er ledig 😊</div>
+    </div>
+    <div id="kari" class="melding-logg">
+      <div class="melding mottatt">Kan jeg ta med hunden min?</div>
+      <div class="melding sendt">Ja, det går helt fint!</div>
+    </div>
+
+    <div class="ny-melding">
+      <input type="text" id="meldingInput" placeholder="Skriv en melding..." onkeydown="if(event.key==='Enter'){sendMelding();}">
+      <button onclick="sendMelding()">Send</button>
+    </div>
+  </section>
+</main>
+
+<script>
+  function visSamtale(navn) {
+    const samtaler = document.querySelectorAll(".melding-logg");
+    samtaler.forEach(s => s.classList.remove("aktiv"));
+    document.getElementById(navn).classList.add("aktiv");
+  }
+
+  function sendMelding() {
+    const input = document.getElementById("meldingInput");
+    const tekst = input.value.trim();
+    if (tekst === "") return;
+
+    const aktivSamtale = document.querySelector(".melding-logg.aktiv");
+    const nyDiv = document.createElement("div");
+    nyDiv.classList.add("melding", "sendt");
+    nyDiv.textContent = tekst;
+    aktivSamtale.appendChild(nyDiv);
+
+    input.value = "";
+    aktivSamtale.scrollTop = aktivSamtale.scrollHeight;
+  }
+</script>
+
+
 </body>
+</html>

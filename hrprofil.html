@@ -7,31 +7,125 @@
     <link rel="stylesheet" href="hr.css">
 
 
-<body>
-    <header>
-        <div class="logo">
-			<a href="hrforside.html">
-				<img src="logo.jpg" alt="logo" class="logo">
-			</a>
-		</div>
-        <div class="profil">
-            <a href="hrprofil.html">
-                <img src="profilbilde.jpg" alt="Profil" class="profilbilde">
-            </a>
-            <input type="checkbox" id="meny-toggle">
-            <label for="meny-toggle" class="meny-ikon">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-            <div class="meny-valg">
-                <a href="hrprofil.html" class="kontoknapp">Profil</a>
-                <a href="hrmelding.html" class="meldingknapp">Meldinger</a>
-                <a href="hrpost.html" class="postknapp">Lei ut hjemmet ditt</a>
-                <a href="hrlogg.html" class="loggknapp">Logg inn</a>
-				<a href="hrregistrer.html" class="registrerknapp">Registrer deg</a>
-            </div>
-        </div>
-    </header>
+</head>
+<header>
+<div class="menywrapper">
+  <!-- Skjult checkbox -->
+  <input type="checkbox" id="meny-toggle" hidden>
 
+  <!-- Label fungerer som knapp -->
+  <label for="meny-toggle" class="profilmeny">
+    <span class="meny-ikon">&#9776;</span>
+    <img src="profilbilde.jpg" alt="Profil" class="profilbilde">
+  </label>
+
+  <!-- Menyvalg -->
+  <div class="meny-valg">
+    <a href="hrprofil.html" class="kontoknapp">Profil</a>
+    <a href="hrmelding.html" class="meldingknapp">Meldinger</a>
+    <a href="hrpost.html" class="postknapp">Lei ut hjemmet ditt</a>
+    <button type="button" class="loggknapp">Logg ut</button>
+  </div>
+</div>
+
+  <div class="logo">
+    <a href="index.html">
+      <img src="hrlogo.jpg" alt="logo" class="logo">
+    </a>
+  </div>
+
+<a href="hrfavoritter.html" class="favoritt-hjerte" title="Favoritter">
+  <span>&#10084;</span>
+</a>
+<label for="popup" class="open-popup">Logg inn</label>
+
+<!-- Skjulte radio-knapper for tab-switching -->
+<input type="radio" name="auth-tab" id="login-tab" checked hidden>
+<input type="radio" name="auth-tab" id="register-tab" hidden>
+
+<!-- Pop-up bakgrunn -->
+<input type="checkbox" id="popup" class="popup-checkbox">
+<div class="popup">
+  <div class="popup-content">
+    <label for="popup" class="close-popup">&times;</label>
+
+    <!-- Topp-knapper -->
+    <div class="tab-buttons">
+      <label for="login-tab" class="tab-button">Logg inn</label>
+      <label for="register-tab" class="tab-button">Registrer deg</label>
+    </div>
+
+    <!-- Innhold for Logg inn -->
+    <div class="tab-content login-content">
+      <input type="email" placeholder="E-post" required>
+      <input type="password" placeholder="Passord" required>
+      <button>Logg inn</button>
+    </div>
+
+    <!-- Innhold for Registrer deg -->
+    <div class="tab-content register-content">
+      <input type="text" placeholder="Fornavn" required>
+	  <input type="text" placeholder="Etternavn" required>
+      <input type="email" placeholder="E-post" required>
+	  <input type="tel" placeholder="Telefonnummer" required>
+      <input type="password" placeholder="Passord" required>
+	  <form>
+      <input type="checkbox" id="terms" name="terms" required>
+      <label for="terms">Jeg godkjenner vilkårene for medlemskap</label>
+      </form>
+      <button>Registrer deg</button>
+    </div>
+  </div>
+</div>
+</header>
+  <div class="profil-container">
+    <aside class="profil-sidepanel">
+      <a href="hrprofil.html" class="sidepanel-link active">Profil</a>
+      <a href="hrminereiser.html" class="sidepanel-link">Mine reiser</a>
+	  <a href="hrmineeiendommer.html" class="sidepanel-link">Mine eiendommer</a>
+      <a href="hrvarsler.html" class="sidepanel-link">Varsler</a>
+    </aside>
+
+    <main class="profil-innhold">
+      <div class="profilbilde-seksjon">
+        <img src="profilbilde.jpg" alt="Profilbilde" class="profilbilde-visning">
+        <label class="bytt-bilde-knapp">
+          Endre profilbilde
+          <input type="file" accept="image/*" style="display: none">
+        </label>
+      </div>
+
+      <form class="profil-skjema">
+        <label>Fornavn</label>
+        <input type="text" placeholder="Fornavn" required>
+
+        <label>Etternavn</label>
+        <input type="text" placeholder="Etternavn" required>
+
+        <label>E-post</label>
+        <input type="email" placeholder="E-post" required>
+
+        <label>Telefonnummer</label>
+        <input type="tel" placeholder="Telefonnummer" required>
+
+        <label>Passord</label>
+        <input type="password" placeholder="Passord" required>
+
+        <label>Adresse</label>
+        <input type="text" placeholder="Adresse" required>
+
+        <label>By</label>
+        <input type="text" placeholder="By" required>
+
+        <label>Postnummer</label>
+        <input type="text" placeholder="Postnummer" required>
+
+        <label>Din gjennomsnittsrating</label>
+        <input type="text" placeholder="4.67 ★" readonly>
+
+        <button type="submit" class="lagre-knapp">Lagre</button>
+      </form>
+    </main>
+  </div>
 </body>
+</html>

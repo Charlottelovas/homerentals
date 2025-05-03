@@ -3,34 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lei ut hjemmet ditt</title>
+    <title>Lei ut eiendommen din</title>
     <link rel="stylesheet" href="hr.css">
 
 
+</head>
 <body>
-    <header>
-        <div class="logo">
-			<a href="hrforside.html">
-				<img src="logo.jpg" alt="logo" class="logo">
-			</a>
-		</div>
-        <div class="profil">
-            <a href="hrprofil.html">
-                <img src="profilbilde.jpg" alt="Profil" class="profilbilde">
-            </a>
-            <input type="checkbox" id="meny-toggle">
-            <label for="meny-toggle" class="meny-ikon">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-            <div class="meny-valg">
-                <a href="hrprofil.html" class="kontoknapp">Profil</a>
-                <a href="hrmelding.html" class="meldingknapp">Meldinger</a>
-                <a href="hrpost.html" class="postknapp">Lei ut hjemmet ditt</a>
-                <a href="hrlogg.html" class="loggknapp">Logg inn</a>
-				<a href="hrregistrer.html" class="registrerknapp">Registrer deg</a>				
-            </div>
-        </div>
-    </header>
-</body>
+<header>
+<div class="menywrapper">
+  <!-- Skjult checkbox -->
+  <input type="checkbox" id="meny-toggle" hidden>
+
+  <!-- Label fungerer som knapp -->
+  <label for="meny-toggle" class="profilmeny">
+    <span class="meny-ikon">&#9776;</span>
+    <img src="profilbilde.jpg" alt="Profil" class="profilbilde">
+  </label>
+
+  <!-- Menyvalg -->
+  <div class="meny-valg">
+    <a href="hrprofil.html" class="kontoknapp">Profil</a>
+    <a href="hrmelding.html" class="meldingknapp">Meldinger</a>
+    <a href="hrpost.html" class="postknapp">Lei ut hjemmet ditt</a>
+    <button type="button" class="loggknapp">Logg ut</button>
+  </div>
+</div>
+
+  <div class="logo">
+    <a href="hrforside.html">
+      <img src="index.jpg" alt="logo" class="logo">
+    </a>
+  </div>
+
+<a href="hrfavoritter.html" class="favoritt-hjerte" title="Favoritter">
+  <span>&#10084;</span>
+</a>
+<label for="popup" class="open-popup">Logg inn</label>
+
+<!-- Skjulte radio-knapper for tab-switching -->
+<input type="radio" name="auth-tab" id="login-tab" checked hidden>
+<input type="radio" name="auth-tab" id="register-tab" hidden>
+
+<!-- Pop-up bakgrunn -->
+<input type="checkbox" id="popup" class="popup-checkbox">
+<div class="popup">
+  <div class="popup-content">
+    <label for="popup" class="close-popup">&times;</label>
+
+    <!-- Topp-knapper -->
+    <div class="tab-buttons">
+      <label for="login-tab" class="tab-button">Logg inn</label>
+      <label for="register-tab" class="tab-button">Registrer deg</label>
+    </div>
+
+    <!-- Innhold for Logg inn -->
+    <div class="tab-content login-content">
+      <input type="email" placeholder="E-post" required>
+      <input type="password" placeholder="Passord" required>
+      <button>Logg inn</button>
+    </div>
+
+    <!-- Innhold for Registrer deg -->
+    <div class="tab-content register-content">
+      <input type="text" placeholder="Fornavn" required>
+	  <input type="text" placeholder="Etternavn" required>
+      <input type="email" placeholder="E-post" required>
+	  <input type="tel" placeholder="Telefonnummer" required>
+      <input type="password" placeholder="Passord" required>
+	  <form>
+      <input type="checkbox" id="terms" name="terms" required>
+      <label for="terms">Jeg godkjenner vilkårene for medlemskap</label>
+      </form>
+      <button>Registrer deg</button>
+    </div>
+  </div>
+</div>
+</header>
+
+
+<div class="utleie-container">
+
+  <h2>Hva slags overnatting tilbyr du?</h2>
+  <div class="valg-type">
+    <input type="radio" name="romtype" id="delt" value="delt" hidden>
+    <label for="delt" class="romtype-knapp">Delt rom</label>
+
+    <input type="radio" name="romtype" id="privat" value="privat" hidden>
+    <label for="privat" class="romtype-knapp">Privat rom</label>
+
+    <input type="radio" name="romtype" id="hele" value="hele" hidden>
+    <label for="hele" class="romtype-knapp">Helt hjem</label>
+  </div>
+
+  <h2>Tittelbeskrivelse</h2>
+  <input type="text" maxlength="30" placeholder="Eks: Koselig hytte ved fjorden" class="kort-beskrivelse">
+
+  <h2>Beskrivelse av stedet</h2>
+  <textarea class="beskrivelse" placeholder="Skriv en beskrivelse av eiendommen din..."></textarea>
+
+  <h2>Adresse</h2>
+  <input type="text" placeholder="Gateadresse" class="tekstfelt">
+  <input type="text" placeholder="By" class="tekstfelt">
+  <input type="text" placeholder="Postnummer" class="tekstfelt">
+
+  <h2>Pris per natt</h2>
+  <input type="number" placeholder="Eks: 1200 NOK" class="tekstfelt">
+
+  <h2>Hvilke fasiliteter tilbyr du?</h2>
+  <div class="fasiliteter">
+    <label><input type="checkbox" value="wifi"> Wifi</label>
+    <label><input type="checkbox" value="parkering"> Parkering</label>
+    <label><input type="checkbox" value="basseng"> Basseng</label>
+    <label><input type="checkbox" value="sjøutsikt"> Sjøutsikt</label>
+    <label><input type="checkbox" value="kjøkken"> Kjøkken</label>
+    <label><input type="checkbox" value="vaskemaskin"> Vaskemaskin</label>
+    <label><input type="checkbox" value="tv"> TV</label>
+    <label><input type="checkbox" value="klimaanlegg"> Klimaanlegg</label>
+    <label><input type="checkbox" value="handicap"> Handicap-vennlig</label>
+	<label><input type="checkbox" value="balkong"> Balkong</label>
+  </div>
+
+  <h2>Kapasitet</h2>
+  <div class="kapasitet">
+    <div class="teller">
+      <label>Maks gjester:</label>
+      <button onclick="endreAntall('gjester', -1)">-</button>
+      <span id="gjester">1</span>
+      <button onclick="endreAntall('gjester', 1)">+</button>
+    </div>
+
+    <div class="teller">
+      <label>Antall senger:</label>
+      <button onclick="endreAntall('senger', -1)">-</button>
+      <span id="senger">1</span>
+      <button onclick="endreAntall('senger', 1)">+</button>
+    </div>
+  </div>
+
+  <h2>Bilder</h2>
+  <input type="file" id="bildeInput" multiple accept="image/*">
+  <div id="bildeForhandsvisning" class="forhandsvisning"></div>
+
+  <button class="send-inn-knapp">Opprett innlegg (sendes inn til gjennomgang)</button>
+</div>
+
+
+<script>
+  function endreAntall(type, endring) {
+    const el = document.getElementById(type);
+    let antall = parseInt(el.innerText);
+    if (antall + endring >= 1) {
+      el.innerText = antall + endring;
+    }
+  }
+
+  const bildeInput = document.getElementById("bildeInput");
+  const visning = document.getElementById("bildeForhandsvisning");
+
+  bildeInput.addEventListener("change", function () {
+    visning.innerHTML = "";
+    for (let i = 0; i < this.files.length; i++) {
+      const fil = this.files[i];
+      const leser = new FileReader();
+      leser.onload = function (e) {
+        const img = document.createElement("img");
+        img.src = e.target.result;
+        visning.appendChild(img);
+      };
+      leser.readAsDataURL(fil);
+    }
+  });
+</script>
+ 
+    
+    
+  </body>
+    </html>
