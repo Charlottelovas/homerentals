@@ -95,8 +95,15 @@
 </header>
 <main class="eiendom-detaljer">
   <form class="edit-eiendom-form">
-    <h1 class="city-name"><input type="text" value="Oslo, Norge" name="city" style="width: 200px;"></h1>
-    <h2 class="property-title"><input type="text" value="Villa på Holmenkollen" name="title" style="width: 300px;"></h2>
+	<div class="felt">
+	  <label for="city"><strong>By og land</strong></label><br>
+	  <input type="text" id="city" name="city" value="Oslo, Norge" style="width: 200px;">
+	</div>
+	<div class="felt">
+	  <label for="title"><strong>Tittel</strong></label><br>
+	  <input type="text" id="title" name="title" value="Villa på Holmenkollen" style="width: 300px;">
+	</div>
+
     <div class="bildegalleri-detalj">
         <div class="stor-bilde">
             <img src="holmenkollen.jpg" alt="Hovedbilde" id="mainImage">
@@ -116,7 +123,7 @@
     <div class="info-seksjon">
         <div class="venstre-info">
             <div class="pris-rating">
-                <span class="star-rating">⭐ <input type="number" value="5.00" step="0.01" min="0" max="5" name="rating" style="width: 60px;">/5</span>
+                <span class="star-rating">⭐ 5,00/5</span>
                 <span class="pris"><input type="number" value="2000" name="pris" style="width: 80px;"> NOK per natt</span>
             </div>
             <ul class="fasiliteter">

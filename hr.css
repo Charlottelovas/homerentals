@@ -1086,9 +1086,16 @@ input[name="romtype"]:checked + .romtype-knapp {
     border-radius: 8px;
     padding: 6px 16px;
 }
-.beskrivelse {
+.beskrivelse-boks {
     margin-bottom: 2em;
+    width: 100%;
+  height: 200px; /* Juster etter behov */
+  resize: vertical; /* Tillater brukeren å dra størrelsen selv */
+  padding: 10px;
+  font-size: 1rem;
+  box-sizing: border-box;
 }
+
 .beskrivelse h3 {
     margin-top: 0;
     font-size: 1.1em;
@@ -1697,4 +1704,18 @@ input[name="romtype"]:checked + .romtype-knapp {
 .footer-separator {
   color: #bbb;
   margin: 0 4px;
+}
+
+
+
+
+
+
+.felt {
+  margin-bottom: 1em;
+}
+.felt label {
+  display: block;
+  margin-bottom: 0.1em;
+  font-weight: bold;
 }
