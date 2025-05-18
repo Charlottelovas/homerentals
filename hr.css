@@ -1338,6 +1338,7 @@ input[name="romtype"]:checked + .romtype-knapp {
     background: none;
     border: none;
 }
+
 .filter-type-buttons {
     display: flex;
     gap: 10px;
@@ -1348,12 +1349,13 @@ input[name="romtype"]:checked + .romtype-knapp {
     padding: 10px 0;
     border: 1.5px solid #FF5A5F;
     background: #fff;
-    color: #000000;
-    border-radius: 8px;
+    color: #443e3e;
+    border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
 }
+
 .filter-type-btn:hover, .filter-type-btn.active {
     background: #FF5A5F;
     color: #fff;
