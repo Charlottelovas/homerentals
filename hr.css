@@ -242,12 +242,13 @@ header {
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     padding: 1rem;
     margin: 0 auto;
+	transition: all 0.2s ease;
+	border: 2px solid #000000;
 }
 
 .sokeboks:hover {
-	transition: all 0.2s ease;
-	border: 2px solid #000000;
 	background-color: #ff757a;
+	box-shadow: 0 6px 24px rgba(0,0,0,0.25);
 }
 
 .sokefelt {
@@ -356,7 +357,7 @@ header {
   display: flex;
   justify-content: flex-end;
   margin: 2rem 2rem 1rem 0; /* More space above and below */
-  padding-right: 300px;
+  padding-right: 500px;
 }
 
 .filter-boks {
@@ -374,7 +375,7 @@ header {
 }
 .filter-boks:hover{
   background-color: #FF5A5F;
-	color:#fff;
+	color:#000;
 }
 
 .filter-bilde{
