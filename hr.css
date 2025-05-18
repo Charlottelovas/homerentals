@@ -1653,22 +1653,22 @@ input[name="romtype"]:checked + .romtype-knapp {
 .notification-bell {
   background: #f3f3f3;
   border: none;
-  font-size: 1.3em;
+  font-size: 1.2em;
   cursor: pointer;
   color: #888;
   padding: 0;
   outline: none;
   transition: background 0.2s, color 0.2s;
   border-radius: 50%;
-  width: 38px;
-  height: 38px;
+  width: 35px;
+  height: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 8px;
 }
 .notification-bell span {
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: #888;
 }
 .notification-bell:hover, .notification-bell:focus {
