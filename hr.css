@@ -176,7 +176,7 @@ header {
 	transition: background-color 0.2s;
 }
 .close-popup:hover {
-	background-color: rgba(0,0,0,0,05);
+	background-color: rgba(0,0,0,0.15);
 }
 	
 .tab-buttons {
