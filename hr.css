@@ -1416,6 +1416,7 @@ input[name="romtype"]:checked + .romtype-knapp {
 }
 .kort-gjester {
     color: #444;
+	padding-right: 10px;
 }
 
 .checkout-container {
