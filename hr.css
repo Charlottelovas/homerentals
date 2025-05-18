@@ -351,7 +351,7 @@ header {
   display: flex;
   justify-content: flex-end;
   margin: 2rem 0 1rem 0; /* More space above and below */
-  padding-right: 40px;
+  padding-right: 100px;
 }
 
 .filter-boks {
@@ -360,7 +360,7 @@ header {
     margin-top: 16px;             /* Ekstra luft over knappen */
     margin-bottom: 16px;          /* Ekstra luft under knappen */
     border-radius: 5px;           /* (valgfritt) avrundede hjørner */
-    background-color: white;      /* (valgfritt) hvit bakgrunn */
+    background-color: #FF5A5F;      /* (valgfritt) hvit bakgrunn */
     cursor: pointer;              /* Endrer musepeker ved hover */
 	color:#000000;
 	font-weight:bold;
@@ -368,7 +368,7 @@ header {
 	margin-right: 30px;
 }
 .filter-boks:hover{
-  background-color:#FF5A5F;
+  background-color: white;
 	color:#fff;
 }
 
@@ -398,10 +398,10 @@ header {
 /* BILDEGALLERI */
 .bildegalleri {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    padding: 0 32px;
-    max-width: 1000px;
+    padding: 0 50px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
