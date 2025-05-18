@@ -122,7 +122,7 @@ header {
 	background: #FF5A5F;
 	color: white;
 	width:70px;
-	padding: 10px;
+	padding: 20px;
 	border-radius: 8px;
 }
 
@@ -150,7 +150,7 @@ header {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   z-index:2;
 }
 
@@ -162,11 +162,23 @@ header {
 /* Lukkeknapp */
 .close-popup {
   position: absolute;
-  top: 10px;
-  right: 15px;
+  top: 16px;
+  right: 16px;
   font-size: 24px;
   cursor: pointer;
+	width: 32px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	background: transparent;
+	transition: background-color 0.2s;
+
+.close-popup:hover {
+	background-color: rgba(0,0,0,0,05);
 }
+	
 .tab-buttons {
   display: flex;
   justify-content: space-around;
