@@ -127,7 +127,7 @@ header {
 }
 
 .open-popup:hover {
-	background: #e05e63;
+	background: #c9c9c9;
 	transition: box-shadow 0.2s ease;
 }
 
