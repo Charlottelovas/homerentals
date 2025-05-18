@@ -365,12 +365,12 @@ header {
 }
 
 .filter-boks {
-    border: 3.5px solid #333;       /* Gjør kanten tykkere og mørkere */
+    border: 2px solid #333;       
     padding: 8px 16px;            /* Litt innvendig luft (kan justeres) */
     margin-top: 16px;             /* Ekstra luft over knappen */
     margin-bottom: 16px;          /* Ekstra luft under knappen */
     border-radius: 5px;           /* avrundede hjørner */
-    background-color: white;      /* hvit bakgrunn */
+    background-color: #FF5A5F;      /* hvit bakgrunn */
     cursor: pointer;              /* Endrer musepeker ved hover */
 	color:#000000;
 	font-weight:bold;
@@ -378,7 +378,7 @@ header {
 	margin-right: 30px;
 }
 .filter-boks:hover{
-  background-color: #FF5A5F;
+  background-color: #9c9c9c;
 	color:#000;
 }
 
