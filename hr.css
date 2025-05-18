@@ -407,7 +407,7 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    padding: 0 50px;
+    padding: 0 30px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -434,6 +434,7 @@ header {
     transition: color 0.2s;
     cursor: pointer;
 }
+
 .kort-hjerte:hover {
     color: #FF5A5F;
     background: none;
@@ -442,6 +443,7 @@ header {
     color: #FF5A5F;
     background: none;
 }
+
 .kort img {
     display: block;
     width: 100%;
@@ -513,8 +515,6 @@ header {
     justify-content: center;
     align-items: center;
 }
-
-
 
 
 .meldinger-container {
