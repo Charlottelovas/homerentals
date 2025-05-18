@@ -17,7 +17,7 @@ header {
 }
 
 .logo {
-	width: 100px;
+	width: 110px;
 	height: 70px;
   display: block;
   margin:auto;
@@ -1348,7 +1348,7 @@ input[name="romtype"]:checked + .romtype-knapp {
     padding: 10px 0;
     border: 1.5px solid #FF5A5F;
     background: #fff;
-    color: #FF5A5F;
+    color: #000000;
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
