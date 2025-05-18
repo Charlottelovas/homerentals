@@ -289,7 +289,7 @@ header {
 }
 
 	.sokefelt button:hover {
-	background-color: #e05e63;
+	background-color: #9c9c9c;
 }
 
 
@@ -361,7 +361,7 @@ header {
   display: flex;
   justify-content: flex-end;
   margin: 2rem 2rem 1rem 0; /* More space above and below */
-  padding-right: 500px;
+  padding-right: 400px;
 }
 
 .filter-boks {
@@ -553,7 +553,7 @@ header {
 
 
 .meldingsvisning {
-  width: 75%;
+  max-width: 800px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -592,14 +592,14 @@ header {
   display: flex;
   gap: 10px;
   margin-top: auto;
-  padding: 10px 0;
+  padding: 10px 20px;
   border-top: 1px solid #ddd;
   background-color: white;
 }
 
 .ny-melding input {
   flex-grow: 1;
-  padding: 10px;
+  padding: 10px 20px;
   border: 1px solid #ccc;
   border-radius: 20px;
   font-size: 14px;
