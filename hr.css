@@ -386,7 +386,7 @@ header {
 /* BILDEGALLERI */
 .bildegalleri {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(4, minmax(300px, 1fr));
     gap: 32px;
     padding: 0 32px;
     max-width: 1400px;
@@ -1199,7 +1199,7 @@ input[name="romtype"]:checked + .romtype-knapp {
     cursor: pointer;
     z-index: 10001;
 }
-@media (max-width: 900px) {
+@media (max-width: 800px) {
     .bildegalleri-detalj {
         grid-template-columns: 1fr;
         gap: 10px;
@@ -1216,7 +1216,7 @@ input[name="romtype"]:checked + .romtype-knapp {
         margin-top: 12px;
     }
 }
-@media (max-width: 600px) {
+@media (max-width: 450px) {
     .stor-bilde, .sma-bilder {
         height: 160px;
     }
