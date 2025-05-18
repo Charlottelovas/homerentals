@@ -242,13 +242,6 @@ header {
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     padding: 1rem;
     margin: 0 auto;
-	transition: all 0.2s ease;
-	border: 2px solid #000000;
-}
-
-.sokeboks:hover {
-	background-color: #ff757a;
-	box-shadow: 0 6px 24px rgba(0,0,0,0.25);
 }
 
 .sokefelt {
@@ -287,7 +280,15 @@ header {
     font-weight: bold;
     font-size: 14px;
     cursor: pointer;
+	transition: all 0.2s ease;
+	border: 2px solid #000000;
 }
+
+	.sokefelt button:hover {
+	background-color: #ff757a;
+	box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+}
+
 
 /* GJESTEVELGER */
 .gjestevalg {
