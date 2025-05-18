@@ -95,18 +95,23 @@ header {
 }
 .kontoknapp:hover {
 	background-color:gray;
+	color: #fff;
 }
 .meldingknapp:hover {
 	background-color:gray;
+	color: #fff;
 }
 .postknapp:hover {
 	background-color:gray;
+	color: #fff;
 }
 .loggknapp:hover {
 	background-color:gray;
+	color: #fff;
 }
 .registrerknapp:hover {
 	background-color:gray;
+	color: #fff;
 }
 /* Skjul checkbox */
 .popup-checkbox {
@@ -127,7 +132,7 @@ header {
 }
 
 .open-popup:hover {
-	background: #c9c9c9;
+	background: #6d6d6d;
 	transition: box-shadow 0.2s ease;
 }
 
@@ -167,8 +172,8 @@ header {
 /* Lukkeknapp */
 .close-popup {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 12px;
+  right: 12px;
   font-size: 24px;
   cursor: pointer;
 	width: 32px;
@@ -198,7 +203,7 @@ header {
 }
 
 .tab-button:hover {
-  background: #ddd;
+  background: #FF5A5F;
 }
 
 .tab-content {
@@ -220,8 +225,6 @@ header {
   background: black;
   color: white;
 }
-
-
 
 
 .sokeboks-bakgrunn {
@@ -289,7 +292,7 @@ header {
 }
 
 	.sokefelt button:hover {
-	background-color: #9c9c9c;
+	background-color: #6d6d6d;
 }
 
 
@@ -378,7 +381,7 @@ header {
 	margin-right: 30px;
 }
 .filter-boks:hover{
-  background-color: #9c9c9c;
+  background-color: #6d6d6d;
 	color:#000;
 }
 
