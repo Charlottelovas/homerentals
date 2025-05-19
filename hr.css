@@ -365,7 +365,7 @@ header {
   display: flex;
   justify-content: flex-end;
   margin: 2rem 2rem 1rem 0; /* More space above and below */
-  padding-right: 20%;
+  padding-right: 10%;
 }
 
 .filter-boks {
