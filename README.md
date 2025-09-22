@@ -16,3 +16,4 @@ Denne plattformen er et studentprosjekt inspirert av Airbnb, utviklet i faget *S
 - Database: MySQL  
 - Metode: Smidig utvikling (Scrum-inspirert)  
 
+## Nettsiden: ([https://charlottelovas.github.io/homerentals/])
