@@ -390,6 +390,8 @@ header {
 	height: 1em; /* Matcher teksthøyden */
 	vertical-align: middle;
 	margin-right: 8px; /* Litt avstand til teksten */
+  width: 20px;
+  height: 20px;
 }
 
 .kategori {
